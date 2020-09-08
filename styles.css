@@ -1,0 +1,128 @@
+:root {
+    /* We could define all colors here, it's only for demonstration! */
+    --nav-bg: rgba(31, 27, 51, 1);
+    --nav-active-bg: rgba(252, 128, 116, 0.2);
+    --nav-active-text: rgba(252, 128, 116, 1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    background-color: #fff;
+    font: 20px/1.35 Avenir;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+#app {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+aside {
+    background-color: var(--nav-bg);
+    border-radius: 48px 0 0 0;
+    color: #fff;
+    height: 100vh;
+    left: 0;
+    padding: 122px 0 0 27px;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+}
+
+aside .content {
+    width: 176px;
+}
+
+aside h1 {
+    font-weight: 900;
+    line-height: 38px;
+    margin: 0 30px 56px;
+}
+
+aside a {
+    border-radius: 16px;
+    display: block;
+    line-height: 27px;
+    margin-bottom: 20px;
+    padding: 12px 30px;
+}
+
+aside a.active {
+    background-color: var(--nav-active-bg);
+    color: var(--nav-active-text);
+}
+
+aside hr {
+    border-color: rgba(132, 129, 142, 1);
+    margin: 50px 0;
+}
+
+main {
+    left: 0;
+    min-height: 120vh;
+    position: absolute;
+    top: 0;
+    transform-origin: 0 0;
+    transition: left 200ms ease-out, top 200ms ease-out;
+    width: 100vw;
+    z-index: 2;
+}
+
+body main .content {
+    background-color: #fff;
+    border-radius: 40px 0 0 0;
+    height: 100vh;
+    padding: 43px 0 0 36px;
+    transition: transform 200ms ease-out;
+    width: 100vw;
+}
+
+body.open main {
+    left: 253px;
+    top: 6px;
+}
+
+body.open main .content {
+    transform: rotate(-7deg);
+}
+
+main button.start {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    display: flex;
+}
+
+main button.start svg {
+    fill: rgba(232, 229, 229, 1);
+    height: 38px;
+    margin-right: 32px;
+    width: 38px;
+}
+
+main button.start span {
+    color: rgba(159, 159, 160, 1);
+    font-size: 24px;
+    letter-spacing: 5px;
+    line-height: 33px;
+    text-transform: uppercase;
+}
